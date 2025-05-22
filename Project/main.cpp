@@ -8,6 +8,8 @@
 #include "Product/Product.h"
 #include "Category/Category.h"
 #include "ProductManager/ProductManager.h"
+#include "Output/Output.h"
+#include "Evaluator/Evaluator.h"
 using namespace std;
 
 int main()
@@ -114,12 +116,50 @@ int main()
     // u.showRoles();
     // u.removeRole(r);
     // u.showRoles();
+    // g++ main.cpp User/User.cpp User/node.cpp
     // Role/Role.cpp Permission/Permission.cpp Token/Token.cpp
     // Personnel/Personnel.cpp Client/Client.cpp Product/Product.cpp
-    // Category/Category.cpp Category/CategoryNode.cpp -o main.exe
+    // Category/Category.cpp Category/CategoryNode.cpp
+    // ProductManager/ProductManager.cpp
+    // Output/Output.cpp -o main.exe
 
-    ProductManager p1;
-    p1.afficher();
-    p1.createCategory();
-    Category::showCategories();
+    // ProductManager p1;
+    // p1.afficher();
+    // p1.createCategory();
+    // Category::showCategories();
+    // Output::startUp();
+    // User u;
+    // string token = u.login();
+    // if (!token.empty()) {
+    //    cout << "Login successful! Token: " << token << endl;
+    // } else {
+    //    cout << "Login failed." << endl;
+    //}
+    ////if(u.preLogin()){
+    //    cout<<"ur preloged in"<<endl;
+    //}
+    // else {
+    //   cout<<"someth went wrong "<<endl;
+    //}
+
+    Evaluator e;
+    e.boot();
+
+    /*Compile command :
+     g++ main.cpp
+     ApiClient/ApiClient.cpp
+     User/User.cpp User/node.cpp
+     Role/Role.cpp Permission/Permission.cpp
+     Token/Token.cpp
+     Personnel/Personnel.cpp
+     Client/Client.cpp
+     Product/Product.cpp
+     Category/Category.cpp
+     Category/CategoryNode.cpp
+     ProductManager/ProductManager.cpp
+     Output/Output.cpp Evaluator/Evaluator.cpp
+     -o main.exe -I ApiClient -I User -I Token -lcurl
+
+
+*/
 }

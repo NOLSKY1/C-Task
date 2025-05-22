@@ -1,26 +1,22 @@
 #ifndef Node_h
 #define Node_h
-#include"../Role/Role.h"
+#include "../Role/Role.h"
 
+class Node
+{
+private:
+    Role *data;
+    Node *next;
 
-class Node{
-    private:
-    Role * data ;
-    Node * next ;
-
-    public:
+public:
     Node();
-    Node( Role *);
+    Node(Role *);
     Node(const Node &);
     ~Node();
-    Node & operator=(const Node &);
-    Role * getData() const ;
-    Node * getNext() const ;
+    Node &operator=(const Node &);
+    Role *getData() const;
+    Node *getNext() const;
     void setNext(Node *);
-
 };
-
-
-
 
 #endif

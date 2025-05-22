@@ -18,7 +18,7 @@ Category::Category (){
     slug = Role::GenerateSlug(name);
     idInc++;
     id=idInc;
-    cout<<"Constructeur par defaut appele (Category)"<<endl;
+    //cout<<"Constructeur par defaut appele (Category)"<<endl;
 }
 Category::Category(const char * name_ , const char * description_){
     name = new char[strlen(name_)+1];
@@ -28,7 +28,7 @@ Category::Category(const char * name_ , const char * description_){
     slug=Role::GenerateSlug(name_);
     idInc++;
     id=idInc;
-    cout<<"Constructeur avec parametre appele (Category)"<<endl;
+    //cout<<"Constructeur avec parametre appele (Category)"<<endl;
 }
 Category::Category(const Category & C){
     name = new char[strlen(C.name)+1];
@@ -38,7 +38,7 @@ Category::Category(const Category & C){
     slug =Role::GenerateSlug(C.name);
     idInc++;
     id=idInc;
-    cout<<"Constructeur de recopie appele (Category)"<<endl;
+    //cout<<"Constructeur de recopie appele (Category)"<<endl;
 }
 Category & Category::operator=(const Category & C){
     delete[] name;
@@ -49,7 +49,7 @@ Category & Category::operator=(const Category & C){
     strcpy(description,C.description);
     delete[]slug;
     slug =Role::GenerateSlug(C.name);
-    cout<<"Operateur d'affectation appele (Category)"<<endl;
+    //cout<<"Operateur d'affectation appele (Category)"<<endl;
     return *this;
 }
 ostream & operator<<(ostream & ostr,Category & C){

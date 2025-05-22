@@ -13,7 +13,7 @@ CategoryNode::CategoryNode() {
 CategoryNode::CategoryNode(Category* category) {
     data = category;
     next = nullptr;
-    cout << "Constructeur avec parametre appele (category node)" << endl;
+    //cout << "Constructeur avec parametre appele (category node)" << endl;
 }
 
 CategoryNode::CategoryNode(const CategoryNode& node) {

@@ -13,7 +13,7 @@ private:
     char *email;
     string token;
     static int idInc;
-    Node * head ; // first node in my linkded list (in class we called it <list>)
+    Node *head; // first node in my linkded list (in class we called it <list>)
 
 public:
     User();
@@ -26,10 +26,8 @@ public:
     friend istream &operator>>(istream &, User &);
     void addRole(Role *); // Insertion debut
     void removeRole(Role *);
-    bool hasRole (const char *);
-    void showRoles() const ;
-
-
+    bool hasRole(const char *);
+    void showRoles() const;
 
     int getId() const;
     const char *getFirstname() const;
