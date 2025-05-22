@@ -142,7 +142,7 @@ void Role::setDescription( const char * description_){
     if(description_==nullptr || strlen(description_)==0){
         throw invalid_argument("Description is required");
     }
-    const regex descriptionPattern(R"(^[\w\s.,'"()\-]{10,255}$)");
+    const regex descriptionPattern(R"(^[A-Za-z0-9 .,\'\"()\-]{10,255}$)");
     if(!regex_match(description_,descriptionPattern)){
         throw invalid_argument("Description must contain min of 10 characters");
     }

@@ -1,6 +1,7 @@
 #ifndef Product_h
 #define Product_h
 #include<string>
+#include"../Category/Category.h"
 using namespace std;
 
 class Product{
@@ -11,7 +12,7 @@ class Product{
     double price;
     double discount;
     char * tag;
-    char * category;
+    Category category;
     int quantity;
     string imagePath;
     static int idInc;
@@ -19,7 +20,7 @@ class Product{
 
     public:
     Product();
-    Product(const char *,const char *,const double &,const double &,const char *,const char * ,const int &,const string &);
+    Product(const char *,const double &,const double &,const char *,const Category & ,const int &,const string &);
     Product(const Product &);
     ~Product();
     Product & operator=(const Product &);
@@ -33,18 +34,17 @@ class Product{
     double getPrice()const;
     double getDiscount()const;
     const char * getTag()const;
-    const char* getCategory()const;
+    Category  getCategory()const;
     int getQuantity()const;
     string getImagePath()const ;
     
     //Setters
     void setId(const int &);
     void setTitle(const char *);
-    void setSlug(const char *);
     void setPrice(const double &);
     void setDiscount(const double &);
     void setTag(const char *);
-    void setCategory(const char *);
+    void setCategory( const Category &);
     void setQuantity(const int &);
     void setImagePath(const string &);
 

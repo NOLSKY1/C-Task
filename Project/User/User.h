@@ -1,6 +1,7 @@
 #ifndef User_h
 #define User_h
 #include <string>
+#include "node.h"
 using namespace std;
 class User
 {
@@ -12,6 +13,7 @@ private:
     char *email;
     string token;
     static int idInc;
+    Node * head ; // first node in my linkded list (in class we called it <list>)
 
 public:
     User();
@@ -22,6 +24,12 @@ public:
     virtual void afficher() const; // since we re overiding it after
     friend ostream &operator<<(ostream &, User &);
     friend istream &operator>>(istream &, User &);
+    void addRole(Role *); // Insertion debut
+    void removeRole(Role *);
+    bool hasRole (const char *);
+    void showRoles() const ;
+
+
 
     int getId() const;
     const char *getFirstname() const;

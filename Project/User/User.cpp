@@ -91,7 +91,62 @@ istream & operator>>(istream & istr,User & U){
     istr>>U.token;
     return istr;
 }
-
+void User::addRole(Role * role){
+    Node * newNode = new Node(role);
+    newNode->setNext(head);
+    head = newNode;
+    cout<<"Role added successfully"<<endl;
+}
+void User::removeRole(Role * role){
+    // im checking if list is empty
+    if(head ==nullptr){
+        cout<<"List already empty "<<endl;
+        return;
+    }
+    //checking the first node
+    if(head->getData()->getId()==role->getId()){
+        Node * toDelete = head;
+        head = head->getNext();
+        delete toDelete;
+        cout<<"Role deleted successfully"<<endl;
+        return ;
+    }
+    // Searching for the node in list 
+    Node * courant=head;
+    while(courant->getNext()!=nullptr){
+        Node * nextNode = courant->getNext(); // always checking the next <one step ahead hh>
+        if(nextNode->getData()->getId()==role->getId()){
+            courant->setNext(nextNode->getNext());
+            delete nextNode;
+            cout<<"Role deleted successfully"<<endl;
+            return;
+        }
+        courant = courant->getNext();
+    }
+    cout<<"Role not found"<<endl;
+}
+bool User::hasRole (const char * roleName){
+    Node *courant = head;
+    while(courant!=nullptr){
+        if(strcmp(courant->getData()->getName() , roleName)==0){
+            return true ;
+        }
+        courant = courant->getNext();
+    }
+    return false ;
+}
+void User::showRoles() const {
+    if(head==nullptr){
+        cout<<"List of roles is empty"<<endl;
+        return;
+    }
+    Node * courant= head ;
+    while (courant !=nullptr){
+        Role * r = courant->getData(); 
+        cout<<"Role id: "<<r->getId()<<", Name: "<<r->getName()<<endl;
+        courant = courant->getNext();
+    }
+}
 
 
 int User::getId() const {
